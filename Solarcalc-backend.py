@@ -42,7 +42,18 @@ else:
 )
     print(f"\nTack för att du fyllde i siffrorna!\n\n\n\n")
      
-monthly_prod = [f"Januari",january_cons,"Februari",february_cons,"Mars",march_cons,"April",april_cons,"Maj",may_cons,"Juni",june_cons,"Juli",july_cons,"Augusti",august_cons,"September",september_cons,"oktober",october_cons,"November",november_cons,"December",december_cons]
+monthly_prod = [f"Januari",january_cons,
+                "Februari",february_cons,
+                "Mars",march_cons,
+                "April",april_cons,
+                "Maj",may_cons,
+                "Juni",june_cons,
+                "Juli",july_cons,
+                "Augusti",august_cons,
+                "September",september_cons,
+                "oktober",october_cons,
+                "November",november_cons,
+                "December",december_cons]
 #Size of solar
 for i in range(0, len(monthly_prod), 2):
     month = monthly_prod[i]
