@@ -6,7 +6,7 @@ range_list = range(0,99999999)
 #Årlig förbrukning per månad baserat på snitt
 
 first_input =input ("Vet du kunds förbrukning månadsvis? Ja/Nej \n")
-if first_input != "ja".title():
+if first_input.lower() != "ja":
     user_input = int(input("Okej, vad har kund för årsförbrukning?\n"))    
     annual_consumption = user_input
     january_cons =  annual_consumption * 0.14
@@ -22,24 +22,34 @@ if first_input != "ja".title():
     november_cons = annual_consumption * 0.11
     december_cons =  annual_consumption * 0.13
 else:
-    january_cons = input( "Januari - ")
-    february_cons = input ("Februari - ") 
-    march_cons = input ("Mars - ")
-    april_cons = input ("April - ")
-    may_cons = input ("Maj - " )
-    june_cons = input ("Juni - ")
-    july_cons =  input ("Juli - ")
-    august_cons = input ("Augusti - ")
-    september_cons =input ("September - ")
-    october_cons = input ("October - ")
-    november_cons = input ("November - ")
-    december_cons = input ("December - ")
+    january_cons = int(input("Januari - "))
+    february_cons = int(input("Februari - ")) 
+    march_cons = int(input("Mars - "))
+    april_cons = int(input("April - "))
+    may_cons = int(input("Maj - "))
+    june_cons = int(input("Juni - "))
+    july_cons = int(input("Juli - "))
+    august_cons = int(input("Augusti - "))
+    september_cons = int(input("September - "))
+    october_cons = int(input("October - "))
+    november_cons = int(input("November - "))
+    december_cons = int(input("December - "))
 
+    annual_consumption = (
+    january_cons + february_cons + march_cons + april_cons + may_cons +
+    june_cons + july_cons + august_cons + september_cons +
+    october_cons + november_cons + december_cons
+)
+    print(f"\nTack för att du fyllde i siffrorna!\n\n\n\n")
+     
 monthly_prod = [f"Januari",january_cons,"Februari",february_cons,"Mars",march_cons,"April",april_cons,"Maj",may_cons,"Juni",june_cons,"Juli",july_cons,"Augusti",august_cons,"September",september_cons,"oktober",october_cons,"November",november_cons,"December",december_cons]
 #Size of solar
-for months in monthly_prod:
-    print (months)
+for i in range(0, len(monthly_prod), 2):
+    month = monthly_prod[i]
+    consumption = monthly_prod[i + 1]
+    print(f"{month}: {int(consumption)}")
 while True:
+    print (f"Årlig konsumption: {annual_consumption} kWh")
     recommended_solar = annual_consumption * 0.4
     print ()
 
