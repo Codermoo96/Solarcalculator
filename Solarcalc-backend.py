@@ -21,7 +21,7 @@ if first_input.lower() != "ja":
     october_cons = annual_consumption * 0.08
     november_cons = annual_consumption * 0.11
     december_cons =  annual_consumption * 0.13
-else:
+else: #Här fylls kundens personliga förbrukning per månad
     january_cons = int(input("Januari - "))
     february_cons = int(input("Februari - ")) 
     march_cons = int(input("Mars - "))
@@ -34,7 +34,8 @@ else:
     october_cons = int(input("October - "))
     november_cons = int(input("November - "))
     december_cons = int(input("December - "))
-
+    
+    # Sammanställning av kunds månadsförbrukning för att få ut hela förbrukningen på samma sätt som snittet.
     annual_consumption = (
     january_cons + february_cons + march_cons + april_cons + may_cons +
     june_cons + july_cons + august_cons + september_cons +
@@ -42,7 +43,7 @@ else:
 )
     print(f"\nTack för att du fyllde i siffrorna!\n\n\n\n")
      
-monthly_prod = [f"Januari",january_cons,
+monthly_cons = [f"Januari",january_cons,
                 "Februari",february_cons,
                 "Mars",march_cons,
                 "April",april_cons,
@@ -55,16 +56,48 @@ monthly_prod = [f"Januari",january_cons,
                 "November",november_cons,
                 "December",december_cons]
 #Size of solar
-for i in range(0, len(monthly_prod), 2):
-    month = monthly_prod[i]
-    consumption = monthly_prod[i + 1]
+for i in range(0, len(monthly_cons), 2):
+    month = monthly_cons[i]
+    consumption = monthly_cons[i + 1]
     print(f"{month}: {int(consumption)}")
 while True:
     print (f"Årlig konsumption: {annual_consumption} kWh")
-    recommended_solar = annual_consumption * 0.4
+    recommended_solar = int(annual_consumption * 0.4)
     print ()
+    january_prod = int (recommended_solar *0.015)
+    february_prod = int (recommended_solar  *0.025)
+    march_prod = int (recommended_solar * 0.104)
+    april_prod = int(recommended_solar  *0.13)
+    may_prod = int(recommended_solar *0.139)
+    june_prod = int (recommended_solar * 0.134)
+    july_prod = int (recommended_solar *0.135)
+    august_prod = int (recommended_solar* 0.120)
+    september_prod = int (recommended_solar *0.095)
+    october_prod = int (recommended_solar *0.057)
+    november_prod = int(recommended_solar * 0.027)
+    december_prod = int(recommended_solar * 0.019)
+    
+    monthly_prod =  [f"Januari",january_prod,
+                "Februari",february_prod,
+                "Mars",march_prod,
+                "April",april_prod,
+                "Maj",may_prod,
+                "Juni",june_prod,
+                "Juli",july_prod,
+                "Augusti",august_prod,
+                "September",september_prod,
+                "oktober",october_prod,
+                "November",november_prod,
+                "December",december_prod]
 
-    print (f"Rekommenderad årlig produktion:{recommended_solar}\n")
+    print (f"Rekommenderad årlig produktion:{recommended_solar}kWh\n")
+    print (f"Produktion månad för månad: \n")
+    for i in range(0, len(monthly_prod), 2):
+        month = monthly_prod[i]
+    consumption = monthly_prod[i + 1]
+    print(f"{month}: {int(consumption)}")
+
+
 
 
     #Size of battery
