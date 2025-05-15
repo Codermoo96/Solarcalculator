@@ -96,7 +96,7 @@ while True:
         month = monthly_prod[i]
         consumption = monthly_prod[i + 1]
         print(f"{month}: {int(consumption)}")
-
+    
 
 
     #Size of battery
@@ -104,3 +104,5 @@ while True:
     batterysize = batterysize /30
     print()
     print (f"Rekommenderad batteristorlek för daglig användning: {int (batterysize)} \n")
+    
+    break
