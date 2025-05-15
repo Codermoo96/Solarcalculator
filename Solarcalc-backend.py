@@ -94,15 +94,13 @@ while True:
     print (f"Produktion månad för månad: \n")
     for i in range(0, len(monthly_prod), 2):
         month = monthly_prod[i]
-    consumption = monthly_prod[i + 1]
-    print(f"{month}: {int(consumption)}")
-
+        consumption = monthly_prod[i + 1]
+        print(f"{month}: {int(consumption)}")
 
 
 
     #Size of battery
     batterysize = recommended_solar /12
     batterysize = batterysize /30
+    print()
     print (f"Rekommenderad batteristorlek för daglig användning: {int (batterysize)} \n")
-
-    break
